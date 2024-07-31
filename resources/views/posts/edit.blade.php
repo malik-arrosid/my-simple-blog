@@ -1,4 +1,3 @@
-<!-- edit.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +23,7 @@
         <h1>Edit Post</h1>
         <form action="{{ route('posts.update', $post->id) }}" method="POST">
             @csrf
-            @method('PUT')
+            @method('PUT') <!-- This is important for method spoofing -->
             <label for="title">Title:</label>
             <input type="text" id="title" name="title" value="{{ $post->title }}" required />
             <label for="author">Author:</label>
